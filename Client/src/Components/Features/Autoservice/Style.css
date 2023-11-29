@@ -1,0 +1,30 @@
+.auto_bg {
+  background-image: url("../../Images/right_f.png");
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1210px) {
+  .auto_bg {
+    background-image: url("../../Images/square.JPG");
+  }
+}
+.auto_content > p {
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.auto_content > h1 {
+  font-size: 100px;
+  text-align: start;
+  font-weight: 900;
+  margin-left: 15%;
+  line-height: 1;
+}
+
+.auto_button {
+  margin-right: 5%;
+}

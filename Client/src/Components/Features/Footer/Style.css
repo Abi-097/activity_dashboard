@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Inter:wght@500;600&family=Noto+Sans+JP:wght@200;900&family=Poppins:wght@300;400;600&display=swap");
+
+.main_box {
+  font-family: "Poppins", sans-serif;
+  background-color: #636c9a;
+}
+
+.footer_context {
+  color: #ff8f81;
+  font-weight: 400;
+  transition: color 0.5s ease;
+}
+
+.footer_context:hover {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.footer_context2 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer_icons {
+  margin-right: 7px;
+}
+
+.footer_context3 {
+  color: white;
+}
+
+.footer_icons {
+  transition: transform 1s ease;
+}
+
+.footer_icons:hover {
+  transform: rotate(360deg);
+  color: #ff8f81;
+}

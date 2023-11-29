@@ -1,0 +1,24 @@
+.customer_bg {
+  background-image: url("../../Images/testimo.jpg");
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.customer_heading > h2 {
+  font-weight: 800;
+  font-size: 45px;
+  margin-left: 10px;
+}

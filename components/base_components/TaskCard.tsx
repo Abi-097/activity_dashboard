@@ -12,7 +12,7 @@ import {
 
 interface TaskCardProps {
   data: {
-    created: string;
+    created?: string;
     time: string;
     preparedFor: string;
     description: string;

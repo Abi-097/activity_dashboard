@@ -3,14 +3,17 @@ import { FaTasks } from "react-icons/fa";
 import { CiCalendarDate } from "react-icons/ci";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import UpcomingActivityCard from "./UpcomingActivityCard";
+import TaskCard from "./TaskCard";
 const UpcomingActivity = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
@@ -21,30 +24,9 @@ const UpcomingActivity = () => {
         <CiCalendarDate size={25} />
         <p className="font-semibold">Upcoming Activities</p>
       </div>
-      {/* <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="item-1">
-          <AccordionTrigger >
-            <div className="flex justify-between">
-            <span className="flex items-center gap-2 text-sm">
-              <FaTasks className="text-blue-500" />
-              <p className="text-slate-400 font-semibold">Task created by</p>
-              <p className="text-slate-400">Lucy Lockwood</p>
-            </span>
-            <span className="flex items-center gap-2 text-sm">
-              <p>Due</p>
-              <CiCalendarDate /> <p>Today 11:00 PM</p>
-            </span>
-            </div>
-           
-          </AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion> */}
       <div className="w-full rounded-md">
         <div
-          className="flex justify-between p-4 cursor-pointer bg-gray-100"
+          className="flex justify-between p-4 cursor-pointer"
           onClick={toggleAccordion}
         >
           <div className="flex justify-between w-full">
@@ -53,9 +35,9 @@ const UpcomingActivity = () => {
               <p className="text-slate-400 font-semibold">Task created by</p>
               <p className="text-slate-400">Lucy Lockwood</p>
             </span>
-            <span className="flex items-center gap-2 text-sm md:hidden">
+            <span className="hidden lg:flex items-center gap-2 text-sm">
               <p>Due</p>
-              <CiCalendarDate />
+              <CiCalendarDate className="text-blue-500" size={22} />
               <p>Today 11:00 PM</p>
             </span>
           </div>
@@ -73,8 +55,8 @@ const UpcomingActivity = () => {
           }`}
         >
           <div className="p-4 border-t">
-            {/* Content goes here */}
-            <p>This is the content of the accordion</p>
+            {/* <UpcomingActivityCard /> */}
+            <TaskCard />
           </div>
         </div>
       </div>

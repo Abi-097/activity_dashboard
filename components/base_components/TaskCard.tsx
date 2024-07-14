@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-const TaskCard = () => {
+const TaskCard: React.FC<{ data: string }> = ({ data }) => {
   return (
     <div>
       <div>
@@ -26,19 +26,15 @@ const TaskCard = () => {
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <p>Prepared quote for Jenny Wilson</p>
+            <p>Prepared quote for {data.preparedFor}</p>
           </div>
-          <p className="ml-12">
-            She interested in our new product and wants to negotiate the price.
-            Please include our price listing and set up a call. She interested
-            in our new product and wants to negotiate the price.
-          </p>{" "}
+          <p className="ml-12">{data.description}</p>{" "}
           <div>
             <div className="flex flex-wrap mt-4">
               <div className="w-full md:w-1/2 lg:w-1/3 border border-gray-300 p-4">
                 <p className="ml-3">Reminder</p>
                 <span>
-                  <Select>
+                  <Select defaultValue={data.reminder}>
                     <SelectTrigger className="w-[180px] border-none">
                       <SelectValue placeholder="Select a reminder" />
                     </SelectTrigger>
@@ -58,7 +54,7 @@ const TaskCard = () => {
               <div className="w-full md:w-1/2 lg:w-1/3 border border-gray-300 p-4">
                 <p className="ml-3">Task Priority</p>
                 <span>
-                  <Select>
+                  <Select defaultValue={data.task}>
                     <SelectTrigger className="w-[180px] border-none">
                       <SelectValue placeholder="Select a Task Priority" />
                     </SelectTrigger>
@@ -83,7 +79,7 @@ const TaskCard = () => {
               </div>
               <div className="w-full md:w-full lg:w-1/3 border border-gray-300 p-4">
                 <p className="ml-3">Assign To</p>
-                <Select>
+                <Select defaultValue={data.user}>
                   <SelectTrigger className="w-[180px] border-none">
                     <SelectValue placeholder="Select a User" />
                   </SelectTrigger>

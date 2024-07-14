@@ -2,16 +2,8 @@ import React, { useState } from "react";
 import { FaTasks } from "react-icons/fa";
 import { CiCalendarDate } from "react-icons/ci";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import UpcomingActivityCard from "./UpcomingActivityCard";
 import TaskCard from "./TaskCard";
+
 const UpcomingActivity = () => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -55,7 +47,6 @@ const UpcomingActivity = () => {
           }`}
         >
           <div className="p-4 border-t">
-            {/* <UpcomingActivityCard /> */}
             <TaskCard />
           </div>
         </div>

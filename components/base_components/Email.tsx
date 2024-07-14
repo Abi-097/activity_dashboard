@@ -72,13 +72,13 @@ const Email = () => {
               </div>
             </div>
             <div className="flex gap-2">
-              <div className="flex justify-center items-center w-8 h-8 rounded-full border border-gray-400 hover:bg-gray-200 hover:text-white transition">
+              <div className="flex justify-center items-center w-8 h-8 rounded-full border border-gray-400 hover:bg-gray-200 hover:text-white transition cursor-pointer">
                 <FaChevronLeft className="text-gray-500" />
               </div>
-              <div className="flex justify-center items-center w-8 h-8 rounded-full hover:bg-gray-200 border border-gray-400 hover:text-white transition">
+              <div className="flex justify-center items-center w-8 h-8 rounded-full hover:bg-gray-200 border border-gray-400 hover:text-white transition cursor-pointer">
                 <FaChevronRight className="text-gray-500" />
               </div>
-              <div className="flex justify-center items-center w-8 h-8 rounded-full hover:bg-gray-200 border border-gray-400 hover:text-white transition">
+              <div className="flex justify-center items-center w-8 h-8 rounded-full hover:bg-gray-200 border border-gray-400 hover:text-white transition cursor-pointer">
                 <RiDeleteBinLine className="text-gray-500" />
               </div>
             </div>

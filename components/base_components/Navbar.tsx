@@ -2,10 +2,15 @@
 import React, { useState } from "react";
 import { FaBell, FaQuestionCircle, FaSearch } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { FaXmark, FaBars } from "react-icons/fa6";
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white z-50 h-24">
+    <nav className="fixed top-0 left-0 w-full bg-white z-50 h-[5.5rem]">
       <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 ">
           {/* Left side - Search Bar */}
@@ -19,7 +24,7 @@ const Navbar = () => {
           </div>
 
           {/* Right side - Menu Options */}
-          <div className="flex items-center space-x-4 gap-6">
+          <div className="lg:flex items-center space-x-4 gap-6 hidden">
             {/* Notification */}
             <div className="relative">
               <span className="flex items-center gap-2 cursor-pointer">
@@ -78,6 +83,49 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+          </div>
+          {/* mobile menu */}
+          <div
+            className="flex justify-center items-center lg:hidden mt-5"
+            onClick={toggleMenu}
+          >
+            <div>
+              {isMenuOpen ? (
+                <FaXmark className="text-black text-3xl dark:text-white cursor-pointer" />
+              ) : (
+                <FaBars className="text-black text-3xl dark:text-white cursor-pointer" />
+              )}
+            </div>
+          </div>
+          <div
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } w-[250px] h-fit bg-slate-800 p-4 absolute top-[80px] right-0`}
+          >
+            <ul className="flex flex-col justify-center items-center gap-2 w-full ">
+              <span className="flex items-center justify-center  gap-2 font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-500 hover:text-black w-full text-center">
+                <FaBell className="text-white" size={20} />
+                <p className="text-white ">Notifications</p>
+              </span>
+              <span className="flex items-center justify-center  gap-2 font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-500 hover:text-black w-full text-center">
+                <FaQuestionCircle className="text-white" size={20} />
+                <p className="text-white ">Help Center</p>
+              </span>
+              <span className="flex items-center justify-center  gap-2 font-semibold cursor-pointer p-3 rounded-lg hover:bg-yellow-500 hover:text-black w-full text-center">
+                <button onClick={() => setDropdownOpen(!dropdownOpen)}>
+                  <span className="flex items-center gap-2 cursor-pointer">
+                    <Avatar>
+                      <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="@shadcn"
+                      />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <p className="text-white ">Dana Morris</p>
+                  </span>
+                </button>
+              </span>
+            </ul>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const SocialIcons = () => {
     <div className="flex space-x-5">
       {icons.map((item, index) => (
         <div key={index} className="flex flex-col items-center space-y-2">
-          <div className="flex items-center justify-center border border-slate-500 rounded-full w-9 h-9 text-slate-500">
+          <div className="flex items-center justify-center border border-gray-400 hover:bg-gray-200 hover:text-gray-700 transition rounded-full w-9 h-9 text-slate-500 cursor-pointer">
             {item.icon}
           </div>
           <p className="text-slate-500 text-sm">{item.label}</p>

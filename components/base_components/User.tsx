@@ -8,7 +8,7 @@ import Tabs from "./Tabs";
 const User = () => {
   return (
     <>
-      <div className="flex flex-col items-center min-h-screen text-center mt-7">
+      <div className="flex flex-col items-center text-center mt-7">
         <Avatar className="w-[120px] h-[120px] mb-5">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>

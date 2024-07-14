@@ -1,14 +1,6 @@
 import React from "react";
 import { IoTimerOutline } from "react-icons/io5";
 import { Timeline } from "rsuite";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import TaskCard from "./TaskCard";
 import { HistoryActivity } from "@/lib/data";
 
@@ -23,7 +15,7 @@ const ActivityHistory = () => {
         <Timeline>
           {HistoryActivity.map((data, index) => (
             <Timeline.Item key={index}>
-              <p>{data.time}</p>
+              <p className="mb-2">{data.time}</p>
               <TaskCard data={data} />
             </Timeline.Item>
           ))}

@@ -5,10 +5,16 @@ import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import TaskCard from "./TaskCard";
 import { upcomingData } from "@/lib/data";
 const UpcomingActivity = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState<number[]>([]);
 
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
+  const toggleAccordion = (index: number) => {
+    setIsOpen((prev) => {
+      if (prev.includes(index)) {
+        return prev.filter((i) => i !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
   };
   return (
     <>
@@ -20,7 +26,7 @@ const UpcomingActivity = () => {
         <div key={index} className="w-full rounded-md">
           <div
             className="flex justify-between p-4 cursor-pointer"
-            onClick={toggleAccordion}
+            onClick={() => toggleAccordion(index)}
           >
             <div className="flex justify-between w-full">
               <span className="flex items-center gap-2 text-sm">
@@ -35,7 +41,7 @@ const UpcomingActivity = () => {
               </span>
             </div>
             <div className="flex items-center ml-2">
-              {isOpen ? (
+              {isOpen.includes(index) ? (
                 <AiOutlineUp className="text-slate-400" />
               ) : (
                 <AiOutlineDown className="text-slate-400" />
@@ -44,7 +50,7 @@ const UpcomingActivity = () => {
           </div>
           <div
             className={`overflow-hidden transition-all duration-300 ${
-              isOpen ? "max-h-screen" : "max-h-0"
+              isOpen.includes(index) ? "max-h-screen" : "max-h-0"
             }`}
           >
             <div className="p-4 border-t">
